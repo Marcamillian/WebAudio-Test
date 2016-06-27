@@ -2,6 +2,7 @@ window.onload = init;
 
 var context;
 var bufferLoader;
+var loadedSounds = "something";
 
 function init(){
   var contextClass = ( window.AudioContext ||
@@ -37,6 +38,16 @@ function finishedLoading(bufferList){
   source1.connect(context.destination);
   source2.connect(context.destination);
 
-  source1.start(0);
-  source2.start(0);
+  console.log(window.loadedSounds);
+  window.loadedSounds = bufferList;
+  console.log(window.loadedSounds);
+
+  playSound(bufferList[0]);
 }
+
+var playback = function playback(){
+  playSound(window.loadedSounds[0]);
+  console.log("something")
+}
+
+window.addEventListener("click", playback);
