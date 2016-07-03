@@ -12,7 +12,7 @@ function init(){
   console.log(window.generatedSounds);
   window.generatedSounds.type = 'square';
   window.generatedSounds.frequency.value = 3000;
-  //window.generatedSounds.start();
+  window.generatedSounds.start();
 
   //generatedSounds.connect(context.destination);
 
